@@ -1,0 +1,166 @@
+{
+    "filterList": [
+        {
+            "name": "gray2bin",
+            "displayName": "Gray to binary",
+            "params": [
+                {
+                    "name": "low",
+                    "min": 0,
+                    "max": 255,
+                    "default": 127
+                },
+                {
+                    "name": "high",
+                    "min": 0,
+                    "max": 255,
+                    "default": 255
+                }
+            ]
+        },
+        {
+            "name": "inverse",
+            "displayName": "Binary inverse",
+            "params": []
+        },
+        {
+            "name": "imDilate",
+            "displayName": "Dilatation",
+            "params": [
+                {
+                    "name": "Structural element size",
+                    "min": 1,
+                    "max": 50,
+                    "default": 1
+                },
+                {
+                    "name": "iterations",
+                    "min": 1,
+                    "max": 20,
+                    "default": 1
+                }
+            ]
+        },
+        {
+            "name": "imErode",
+            "displayName": "Erosion",
+            "params": [
+                {
+                    "name": "Structural element size",
+                    "min": 1,
+                    "max": 50,
+                    "default": 1
+                },
+                {
+                    "name": "iterations",
+                    "min": 1,
+                    "max": 20,
+                    "default": 1
+                }
+            ]
+        },
+        {
+            "name": "imOpen",
+            "displayName": "Opening",
+            "params": [
+                {
+                    "name": "Structural element size",
+                    "min": 1,
+                    "max": 50,
+                    "default": 1
+                },
+                {
+                    "name": "iterations",
+                    "min": 1,
+                    "max": 20,
+                    "default": 1
+                }
+            ]
+        },
+        {
+            "name": "imClose",
+            "displayName": "Closing",
+            "params": [
+                {
+                    "name": "Structural element size",
+                    "min": 1,
+                    "max": 50,
+                    "default": 1
+                },
+                {
+                    "name": "iterations",
+                    "min": 1,
+                    "max": 20,
+                    "default": 1
+                }
+            ]
+        },
+        {
+            "name": "removeSmallObjects",
+            "displayName": "Remove small objects",
+            "params": [
+                {
+                    "name": "Minimal size",
+                    "min": 1,
+                    "max": "undefined",
+                    "default": 64
+                }
+            ]
+        },
+        {
+            "name": "removeSmallHoles",
+            "displayName": "Remove small holes",
+            "params": [
+                {
+                    "name": "Area threshold",
+                    "min": 1,
+                    "max": "undefined",
+                    "default": 64
+                }
+            ]
+        },
+        {
+            "name": "removeAllHoles",
+            "displayName": "Remove all holes",
+            "params": [
+                {
+                    "name": "x",
+                    "min": 0,
+                    "max": "undefined",
+                    "default": 0
+                },
+                {
+                    "name": "y",
+                    "min": 0,
+                    "max": "undefined",
+                    "default": 0
+                }
+            ]
+        },
+        {
+            "name": "getColorGrayscaleObjects",
+            "displayName": "Color objects in grayscale",
+            "params": []
+        },
+        {
+            "name": "getObjectsPixelSizes",
+            "displayName": "Objects sizes in pixels",
+            "params": []
+        },
+        {
+            "name": "getObjectsCenterOfMass",
+            "displayName": "Objects center of mass",
+            "params": []
+        },
+        {
+            "name": "getColorRGBObjects",
+            "displayName": "Color objects in RGB",
+            "params": []
+        },
+        {
+            "name": "getObjectsRect",
+            "displayName": "Objects Rectangles",
+            "params": []
+        }
+    ]
+}
