@@ -1,8 +1,9 @@
 # MY IGNORES
 /.notes
 /.vscode
-/*.jpg
-/*.txt
+*.jpg
+# *.txt
+*.bat
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

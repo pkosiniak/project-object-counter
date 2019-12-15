@@ -1,11 +1,11 @@
+import io
+import os
+from math import floor
+from src.Processor import Processor
 from flask import Flask, request, Response, json, jsonify
 from flask_cors import CORS
-import io
-from PIL import Image
-from src.Processor import Processor
-from math import floor
 from flask.helpers import send_file, send_from_directory
-import os
+from PIL import Image
 
 app = Flask(__name__, static_folder='../app/build') 
 CORS(app)

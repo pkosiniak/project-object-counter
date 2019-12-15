@@ -1,7 +1,7 @@
+import numpy as np
 from scipy.ndimage.morphology import binary_erosion, binary_dilation, binary_closing, binary_opening
 from skimage.morphology import remove_small_objects, remove_small_holes, flood_fill
-import cv2
-import numpy as np
+from cv2 import getStructuringElement, MORPH_ELLIPSE
 
 
 class ImageProcessorBase:
@@ -44,8 +44,8 @@ class ImageProcessorBase:
         return binary_closing(img, self.structElement(structElementSize), iterations=iterations)
 
     def structElement(self, structElementSize=1):
-        return cv2.getStructuringElement(
-            cv2.MORPH_ELLIPSE, (structElementSize*2+1, structElementSize*2+1)
+        return getStructuringElement(
+            MORPH_ELLIPSE, (structElementSize*2+1, structElementSize*2+1)
         )
 
     def removeSmallObjects(self, img, minSize=64):

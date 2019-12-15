@@ -1,4 +1,3 @@
-
 fnList = ['removeSmallObjects',
           'removeSmallHoles',
           'removeAllHoles',

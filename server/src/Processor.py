@@ -1,11 +1,11 @@
 from typing import List
 from math import floor
 import io
-from PIL import Image
 from src.fnList import fnList, restricted
 from src.ImageProcessor import ImageProcessor
-import matplotlib.pyplot as plt
 import numpy as np
+from PIL import Image
+import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
 

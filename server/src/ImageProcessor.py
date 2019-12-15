@@ -1,10 +1,10 @@
 import io
+from typing import List
 from src.ImageProcessorBase import ImageProcessorBase
+import numpy as np
 from scipy.ndimage import label, measurements
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
-import numpy as np
-from typing import List
 import matplotlib
 matplotlib.use('Agg')
 
