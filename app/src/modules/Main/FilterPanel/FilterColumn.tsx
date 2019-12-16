@@ -12,7 +12,7 @@ interface FilterColumnProps {
    size: number;
 }
 
-const sliderRef = createRef<HTMLSpanElement>();
+const filterRef = createRef<HTMLSpanElement>();
 
 const FilterColumn: React.FC<FilterColumnProps> = ({
    param,
@@ -26,19 +26,22 @@ const FilterColumn: React.FC<FilterColumnProps> = ({
       const wheelEventHandler = (event: WheelEvent) => {
          if (event.deltaY === 0
             || !param
-            || paramValue <= param?.min
+            || paramValue < param?.min
             || !max
-            || paramValue >= max
+            || paramValue > max
          ) return;
-         handleScrollEvent(event.deltaY > 0 ? 1 : -1);
+         const value = event.deltaY > 0 ? 1 : -1
+         if (paramValue + value >= param.min && paramValue + value <= (param.max === 'undefined' ? size : param.max))
+            handleScrollEvent(event.deltaY > 0 ? 1 : -1);
       }
-      sliderRef.current?.addEventListener('wheel', wheelEventHandler);
+      filterRef.current?.addEventListener('wheel', wheelEventHandler);
       return () => {
-         sliderRef.current?.removeEventListener('wheel', wheelEventHandler);
+         filterRef.current?.removeEventListener('wheel', wheelEventHandler);
       };
    })
 
    const max = param?.max === 'undefined' ? size : param?.max;
+   const step = param?.max === 'undefined' ? Math.floor(size * 0.005) : 1;
    const marks: Mark[] = param && max
       ? [
          {
@@ -55,7 +58,7 @@ const FilterColumn: React.FC<FilterColumnProps> = ({
       : value;
 
    return (
-      <P.FilterParamWrapper>
+      <P.FilterParamWrapper ref={filterRef}>
          <P.H6>{param?.name}</P.H6>
          <P.StyledSlider
             disabled={!param}
@@ -73,7 +76,7 @@ const FilterColumn: React.FC<FilterColumnProps> = ({
             margin="dense"
             onChange={handleInputChange}
             inputProps={{
-               step: 1,
+               step: step,
                min: param?.min,
                max: max,
                type: 'number',

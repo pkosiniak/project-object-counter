@@ -72,12 +72,12 @@ class FilterPanel extends Component<FilterPanelType, FilterPanelState> {
       const { firstParamValue, secondParamValue } = this.state;
       if (!selectedFilter) return;
 
+
       const newFilter = selectedFilter;
       if (newFilter.params.length > 0)
          newFilter.params[0].default = firstParamValue;
-      else
-         if (newFilter.params.length > 1)
-            newFilter.params[1].default = secondParamValue;
+      if (newFilter.params.length > 1)
+         newFilter.params[1].default = secondParamValue;
       processedFilterListPush(newFilter, modify, true);
 
    }
