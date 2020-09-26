@@ -4,6 +4,9 @@
 *.jpg
 # *.txt
 *.bat
+*.docx
+*.png
+.NOTES*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

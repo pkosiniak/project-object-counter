@@ -80,7 +80,7 @@ class Processor:
         res = selectedFunction(img, *args)
         return res if isinstance(res, tuple) else (res, asStream)
 
-    def controler(self, commandList):
+    def controller(self, commandList):
         if commandList == self.commandList:
             return self.normalize(self.lastImg)
 

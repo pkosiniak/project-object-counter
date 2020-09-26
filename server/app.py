@@ -64,7 +64,7 @@ def histogram():
 @app.route('/processor', methods=["POST"])
 def processor():
     commands = request.get_json()
-    result, asStream = proc.controler(commands['commandList'])
+    result, asStream = proc.controller(commands['commandList'])
     if not asStream:
         result = imgArray2stream(result)
     return Response(result.read(), mimetype='image/PNG')
